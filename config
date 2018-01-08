@@ -21,9 +21,6 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse -q set Master 
 bindsym XF86AudioMute exec --no-startup-id amixer -D pulse -q set Master toggle
 #bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
-bindsym $mod+l exec i3lock -c 000000
-bindsym $mod+k exec ~/bin/hibernate
-
 ################################################################################
 # SYSTEM: lock/logout/reboot/suspend/hibernate/shutdown
 
