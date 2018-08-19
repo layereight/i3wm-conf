@@ -14,8 +14,8 @@ bindsym $mod+c exec --no-startup-id ~/bin/rb-pp
 bindsym $mod+b exec --no-startup-id ~/bin/rb-next
 
 bindsym $mod+p exec --no-startup-id ~/bin/display-single.sh
-bindsym $mod+o exec --no-startup-id ~/bin/display-hdmi-only.sh
-
+bindsym $mod+o exec --no-startup-id ~/bin/display-docked.sh
+bindsym $mod+t exec --no-startup-id ~/bin/toggle_touchpad.sh
 
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse -q set Master 3%+ unmute
