@@ -7,8 +7,22 @@ i3status --config ${i3status_conf} | while :
 do
     read line
     LAYOUT=$(~/bin/xkb-switch)
-    BRIGHT=$(cat /sys/class/backlight/intel_backlight/brightness)
-    dat=", { \"full_text\": \"💡$BRIGHT\", \"color\": \"#999900\"}, { \"full_text\": \"🅰$LAYOUT\", \"color\":\"#FF8C00\" }]"
+    BRIGHT=$(cat /sys/class/backlight/acpi_video0/brightness)
+
+    TOUCHPAD_ID=$(xinput list | grep Touchpad | sed 's/.*id=\(.*\) *\[.*/\1/')
+    TOUCHPAD_ENABLED=$(xinput list-props ${TOUCHPAD_ID} | grep Enabled | sed 's/.*\(.\)$/\1/')
+
+    if [ ${TOUCHPAD_ENABLED} -eq 1 ]; then
+        TOUCHPAD="⊐"
+    else
+        TOUCHPAD="⋣"
+    fi
+
+
+    dat=", { \"full_text\": \"💡$BRIGHT\", \"color\": \"#999900\"}, \
+    { \"full_text\": \"🅰$LAYOUT\", \"color\":\"#FF8C00\" }, \
+    { \"full_text\": \"$TOUCHPAD\", \"color\":\"#FFFFFF\" } \
+    ]"
     echo "${line/]/$dat}" || exit 1
 done
 
