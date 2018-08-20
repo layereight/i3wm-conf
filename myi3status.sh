@@ -9,7 +9,7 @@ do
     LAYOUT=$(~/bin/xkb-switch)
     BRIGHT=$(cat /sys/class/backlight/acpi_video0/brightness)
 
-    TOUCHPAD_ID=$(xinput list | grep Touchpad | sed 's/.*id=\(.*\) *\[.*/\1/')
+    TOUCHPAD_ID=$(xinput list | grep -i Touchpad | sed 's/.*id=\(.*\) *\[.*/\1/')
     TOUCHPAD_ENABLED=$(xinput list-props ${TOUCHPAD_ID} | grep Enabled | sed 's/.*\(.\)$/\1/')
 
     if [ ${TOUCHPAD_ENABLED} -eq 1 ]; then
