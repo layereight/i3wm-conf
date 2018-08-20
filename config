@@ -13,7 +13,7 @@ exec --no-startup-id blueman-applet
 bindsym $mod+c exec --no-startup-id ~/bin/rb-pp
 bindsym $mod+b exec --no-startup-id ~/bin/rb-next
 
-bindsym $mod+p exec --no-startup-id ~/bin/display-single.sh
+bindsym $mod+p exec --no-startup-id ~/bin/display-standalone.sh
 bindsym $mod+o exec --no-startup-id ~/bin/display-docked.sh
 bindsym $mod+t exec --no-startup-id ~/bin/toggle_touchpad.sh
 
