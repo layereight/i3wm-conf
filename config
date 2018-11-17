@@ -7,7 +7,7 @@
 
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-#exec xscreensaver -no-splash
+exec --no-startup-id ~/.config/i3/touchpad_configure.sh
 #exec --no-startup-id setxkbmap -layout us,de -variant altgr-intl, -option grp:alt_shift_toggle
 
 bindsym $mod+c exec --no-startup-id ~/bin/rb-pp
@@ -15,7 +15,7 @@ bindsym $mod+b exec --no-startup-id ~/bin/rb-next
 
 bindsym $mod+p exec --no-startup-id ~/bin/display-standalone.sh
 bindsym $mod+o exec --no-startup-id ~/bin/display-docked.sh
-bindsym $mod+t exec --no-startup-id ~/.config/i3/toggle_touchpad.sh
+bindsym $mod+t exec --no-startup-id ~/.config/i3/touchpad_toggle.sh
 
 # find out with `xprop`
 for_window [class="Gnome-calculator"] floating enable

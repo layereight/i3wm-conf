@@ -1,7 +1,11 @@
 #!/bin/sh
 
+script_dir=$(dirname ${0})
 
-TOUCHPAD_ID=$(xinput list | grep -i Touchpad | sed 's/.*id=\(.*\) *\[.*/\1/')
+. ${script_dir}/touchpad_id.sh
+
+$(get_touchpad_id)
+TOUCHPAD_ID=$?
 
 #echo TOUCHPAD_ID=$TOUCHPAD_ID
 
