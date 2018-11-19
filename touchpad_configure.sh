@@ -10,8 +10,8 @@ TOUCHPAD_ID=$?
 #echo TOUCHPAD_ID=$TOUCHPAD_ID
 
 # enable horizontal AND vertical scrolling
-xinput --set-prop 10 "Synaptics Two-Finger Scrolling" 1 1
+xinput --set-prop ${TOUCHPAD_ID} "Synaptics Two-Finger Scrolling" 1 1
 # inverted/natural scrolling
-xinput --set-prop 10 "Synaptics Scrolling Distance" -69 -69
+xinput --set-prop ${TOUCHPAD_ID} "Synaptics Scrolling Distance" -69 -69
 # enable palm detection
-xinput --set-prop 10 "Synaptics Palm Detection" 1
+xinput --set-prop ${TOUCHPAD_ID} "Synaptics Palm Detection" 1
