@@ -19,6 +19,7 @@ bindsym $mod+t exec --no-startup-id ~/.config/i3/touchpad_toggle.sh
 
 # find out with `xprop`
 for_window [class="Gnome-calculator"] floating enable
+for_window [title="win0"] floating enable #intellij
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse -q set Master 3%+ unmute
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3dB && pactl set-sink-mute 0 0
