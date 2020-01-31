@@ -5,6 +5,7 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+exec --no-startup-id ~/bin/passwords/sync_passwords.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id lxpolkit&
@@ -34,12 +35,12 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse -q set Master toggle
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3lock -c 000000, mode "default"
-    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id zenity --question --text="Do you really want to hibernate?" --title="Hibernate" && systemctl hibernate, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym l exec --no-startup-id ~/bin/passwords/sync_passwords.sh && i3lock -c 000000, mode "default"
+    bindsym e exec --no-startup-id ~/bin/passwords/sync_passwords.sh && i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id ~/bin/passwords/sync_passwords.sh && i3lock -c 000000 && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id ~/bin/passwords/sync_passwords.sh && zenity --question --text="Do you really want to hibernate?" --title="Hibernate" && i3lock -c 000000 && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/bin/passwords/sync_passwords.sh && systemctl reboot, mode "default"
+    bindsym p exec --no-startup-id ~/bin/passwords/sync_passwords.sh && systemctl poweroff, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
