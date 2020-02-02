@@ -20,6 +20,8 @@ bindsym $mod+p exec --no-startup-id ~/bin/display-standalone.sh
 bindsym $mod+o exec --no-startup-id ~/bin/display-docked.sh
 bindsym $mod+t exec --no-startup-id ~/.config/i3/touchpad_toggle.sh
 
+bindsym $mod+i exec --no-startup-id ~/bin/passwords/sync_passwords.sh
+
 # find out with `xprop`
 for_window [class="Gnome-calculator"] floating enable
 for_window [title="win0"] floating enable #intellij
