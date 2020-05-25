@@ -21,6 +21,8 @@ bindsym $mod+o exec --no-startup-id ~/bin/display-docked.sh
 bindsym $mod+t exec --no-startup-id ~/.config/i3/touchpad_toggle.sh
 
 bindsym $mod+i exec --no-startup-id ~/bin/passwords/sync_passwords.sh
+bindsym $mod+u exec --no-startup-id ~/bin/passwords/mount_homer.sh
+bindsym $mod+y exec --no-startup-id chromium --user-data-dir=/home/stefan/.config/chromium-work
 
 # find out with `xprop`
 for_window [class="Gnome-calculator"] floating enable
