@@ -15,3 +15,4 @@ xinput --set-prop ${TOUCHPAD_ID} "Synaptics Two-Finger Scrolling" 1 1
 xinput --set-prop ${TOUCHPAD_ID} "Synaptics Scrolling Distance" -69 -69
 # enable palm detection
 xinput --set-prop ${TOUCHPAD_ID} "Synaptics Palm Detection" 1
+xinput --set-prop ${TOUCHPAD_ID} "Synaptics Tap Action" 2 3 0 0 1 3 0
