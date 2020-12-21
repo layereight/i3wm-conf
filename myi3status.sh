@@ -6,7 +6,7 @@ i3status_conf=${1}
 i3status --config ${i3status_conf} | while :
 do
     read line
-    LAYOUT=$(xkb-switch)
+    LAYOUT=$(~/bin/xkb-switch)
     BRIGHT=$(cat /sys/class/backlight/acpi_video0/brightness)
 
     TOUCHPAD_ID=$(xinput list | grep -i Touchpad | sed 's/.*id=\(.*\) *\[.*/\1/')
