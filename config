@@ -16,7 +16,7 @@ exec --no-startup-id ~/.config/i3/touchpad_configure.sh
 bindsym $mod+c exec --no-startup-id ~/bin/rb-pp
 bindsym $mod+b exec --no-startup-id ~/bin/rb-next
 
-bindsym $mod+p exec --no-startup-id ~/bin/display-standalone.sh
+bindsym $mod+p exec --no-startup-id ~/bin/display-internal.sh
 bindsym $mod+o exec --no-startup-id ~/bin/display-docked.sh
 bindsym $mod+t exec --no-startup-id ~/.config/i3/touchpad_toggle.sh
 
