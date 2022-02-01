@@ -9,9 +9,10 @@ do
     read -r line
     LAYOUT=$(xkb-switch)
     BRIGHT=$(cat /sys/class/backlight/acpi_video0/brightness)
+    #BRIGHT=$(cat /sys/class/backlight/intel_backlight/brightness)
 
     TOUCHPAD_ID=$(xinput list | grep -i Touchpad | sed 's/.*id=\(.*\) *\[.*/\1/')
-    TOUCHPAD_ENABLED=$(xinput list-props "${TOUCHPAD_ID}" | grep Enabled | sed 's/.*\(.\)$/\1/')
+    TOUCHPAD_ENABLED=$(xinput list-props ${TOUCHPAD_ID} | grep "Device Enabled" | sed 's/.*\(.\)$/\1/')
 
     if [ "${TOUCHPAD_ENABLED}" -eq 1 ]; then
         TOUCHPAD="⊐"
