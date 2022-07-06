@@ -25,8 +25,8 @@ bindsym $mod+u exec --no-startup-id ~/bin/passwords/mount_homer.sh
 bindsym $mod+y exec --no-startup-id xdg-settings set default-web-browser chromium-work.desktop && chromium-browser --user-data-dir=/home/stefan/.config/chromium-work && xdg-settings set default-web-browser chromium-browser.desktop
 
 # find out with `xprop`
-for_window [class="Gnome-calculator"] floating enable
-for_window [title="win0"] floating enable #intellij
+for_window [class="gnome-calculator"] floating enable
+for_window [class="jetbrains-idea" title="splash"] floating enable #intellij
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse -q set Master 3%+ unmute
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +3dB && pactl set-sink-mute 0 0
